@@ -20,6 +20,8 @@ export async function POST(req: Request) {
       ...messages,
     ];
 
+    console.log("ENV:", process.env.GOOGLE_GENERATIVE_AI_API_KEY);
+
     const result = await streamText({
       model: google("models/gemini-2.5-pro"),
       messages: fullMessages,
