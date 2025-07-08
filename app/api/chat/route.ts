@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     ];
 
     const result = await streamText({
-      model: google("models/gemini-2.5-pro"),
+      model: google("models/gemini-2.0-flash"),
       messages: fullMessages,
     });
 

@@ -4,7 +4,7 @@ import { streamText } from "ai";
 export async function GET() {
   try {
     const result = await streamText({
-      model: google("models/gemini-2.5-pro"),
+      model: google("models/gemini-2.0-flash"),
       messages: [{ role: "user", content: "Say hello" }],
     });
 
