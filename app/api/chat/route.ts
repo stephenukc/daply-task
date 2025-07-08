@@ -24,8 +24,13 @@ export async function POST(req: Request) {
     });
 
     return result.toDataStreamResponse();
-  } catch (error) {
-    console.error("Chat route error:", error);
+  } catch (error: any) {
+    console.error("Chat route error:", {
+      message: error.message,
+      stack: error.stack,
+      cause: error.cause,
+      raw: error,
+    });
     return new Response("Internal Server Error", { status: 500 });
   }
 }
